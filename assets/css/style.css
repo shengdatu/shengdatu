@@ -447,3 +447,9 @@ table.data b{ color:var(--ink); }
 @media print{
   .header,.topbar,.floats,.inqbar,.footer,.burger{ display:none !important; }
 }
+
+.catalog-tools{display:flex;gap:14px;align-items:center;justify-content:space-between;margin:-10px 0 26px}
+.catalog-tools input{width:min(480px,100%);padding:12px 16px;border:1.5px solid var(--line);border-radius:100px;font:inherit;background:#fff;color:var(--ink)}
+.catalog-tools input:focus{outline:0;border-color:var(--brand);box-shadow:0 0 0 3px rgba(180,101,58,.12)}
+#productCount{font-size:.86rem;color:var(--ink-3);font-weight:650;white-space:nowrap}
+@media(max-width:640px){.catalog-tools{align-items:stretch;flex-direction:column}.catalog-tools input{width:100%}}
