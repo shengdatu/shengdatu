@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var C = window.SITE_CONFIG, D = window.I18N, P = window.PRODUCTS || [];
+  var C = window.SITE_CONFIG, D = window.I18N, P = window.PRODUCTS || [], K = window.PRODUCT_CATEGORIES || [];
   var LANG_KEY = "pawnest_lang", CART_KEY = "pawnest_inquiry";
 
   /* ================= 1. 语言 ================= */
@@ -113,33 +113,35 @@
     if (!d) return LANG === "zh" ? "基础价" : "Base price";
     return LANG === "zh" ? ("省 " + d + "%") : ("Save " + d + "%");
   }
-  function typeLabel(ty) { return ty === "large" ? t("common.large") : t("common.small"); }
+  function categoryLabel(p) { return LANG === "zh" ? p.categoryZh : p.categoryEn; }
   function pName(p) { return LANG === "zh" ? p.nameZh : p.nameEn; }
   function imgTag(p, cls) {
-    var ph = "assets/images/placeholder/" + p.code.replace(/\./g, "").toLowerCase() + ".svg";
-    return '<img src="' + p.image + '" alt="' + pName(p).replace(/"/g, "") + ' ' + p.code +
+    var ph = "assets/images/placeholder/no1.svg";
+    var src = (window.PRODUCT_IMAGES && window.PRODUCT_IMAGES[p.image]) || p.image;
+    return '<img src="' + src + '" alt="' + pName(p).replace(/"/g, "") + ' ' + p.code +
       '" loading="lazy" onerror="this.onerror=null;this.src=\'' + ph + '\'"' + (cls ? ' class="' + cls + '"' : '') + '>';
   }
 
   /* ================= 4. 产品卡渲染 ================= */
   function card(p) {
-    return '' +
+    var rmb = p.priceRmb ? ("¥" + Number(p.priceRmb).toFixed(2)) : "—";
+    return "" +
       '<article class="pcard">' +
         '<div class="pcard__media">' + imgTag(p) +
           '<span class="pcard__code">' + p.code + '</span>' +
           '<span class="pcard__tags">' +
-            '<span class="tag tag--type">' + typeLabel(p.type) + '</span>' +
+            '<span class="tag tag--type">' + categoryLabel(p) + '</span>' +
             (p.hot ? '<span class="tag tag--hot">' + t("common.hot") + '</span>' : '') +
           '</span>' +
         '</div>' +
         '<div class="pcard__body">' +
           '<h3 class="pcard__name">' + pName(p) + '</h3>' +
           '<p class="pcard__spec"><b>' + t("common.size") + '：</b>' + p.size +
-            ' &nbsp;·&nbsp; <b>' + t("common.weight") + '：</b>' + p.weight + '</p>' +
+            ' &nbsp;·&nbsp; <b>MOQ：</b>' + p.moq + '</p>' +
           '<div class="pcard__price">' +
-            '<div class="pcard__from">' + tierLabel(0) + '</div>' +
+            '<div class="pcard__from">' + (LANG === "zh" ? "目录参考单价" : "Catalogue unit price") + '</div>' +
             '<div class="pcard__num">' + money(p.basePrice) + '<small>' + t("common.perPiece") + '</small></div>' +
-            '<div class="pcard__disc">' + tierLabel(1) + ' → ' + money(tierPrice(p.basePrice, 1)) + '（' + discText(1) + '）</div>' +
+            '<div class="pcard__disc">RMB ' + rmb + t("common.perPiece") + '</div>' +
             '<div class="pcard__btns">' +
               '<button class="btn btn--primary btn--sm js-add" data-code="' + p.code + '">' + t("common.addToInquiry") + '</button>' +
               '<a class="btn btn--ghost btn--sm js-wa" data-wa-text="' + waText(p) + '" target="_blank" rel="noopener">WhatsApp</a>' +
@@ -151,44 +153,41 @@
 
   function waText(p) {
     return (LANG === "zh"
-      ? "你好，我想询价：" + p.code + " " + p.nameZh + "（" + p.size + "）。请报 200 件与 500 件的价格。"
+      ? "你好，我想询价：" + p.code + " " + p.nameZh + "（" + p.size + "，MOQ：" + p.moq + "）。请提供最新价格、交期和运费。"
       : "Hello, I would like a quote for " + p.code + " " + p.nameEn + " (" + p.size +
-        "). Please quote for 200 pcs and 500 pcs.").replace(/"/g, "&quot;");
+        ", MOQ: " + p.moq + "). Please provide the latest price, lead time and shipping cost.").replace(/"/g, "&quot;");
   }
 
   function row(p) {
-    var tiers = C.tiers.map(function (tr, i) {
-      return '<div' + (i === 1 ? ' class="is-best"' : '') + '>' +
-        '<span>' + tierLabel(i) + '</span>' +
-        '<b>' + money(tierPrice(p.basePrice, i)) + '</b>' +
-        '<span style="color:var(--green);font-weight:700">' + discText(i) + '</span></div>';
-    }).join("");
-
     var feats = (LANG === "zh" ? p.features.zh : p.features.en)
       .map(function (f) { return "<li>" + f + "</li>"; }).join("");
-
-    return '' +
-      '<article class="prow" data-type="' + p.type + '" id="' + p.code.replace(/\./g, "").toLowerCase() + '">' +
+    var rmb = p.priceRmb ? ("¥" + Number(p.priceRmb).toFixed(2)) : "—";
+    return "" +
+      '<article class="prow" data-category="' + p.category + '" data-search="' +
+        (p.code + " " + p.nameEn + " " + p.nameZh).toLowerCase().replace(/"/g, "") +
+        '" id="' + p.code.replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase() + '">' +
         '<div class="prow__media">' + imgTag(p) + '</div>' +
         '<div class="prow__body">' +
           '<div class="prow__head">' +
             '<span class="prow__code">' + p.code + '</span>' +
-            '<span class="tag tag--type">' + typeLabel(p.type) + '</span>' +
+            '<span class="tag tag--type">' + categoryLabel(p) + '</span>' +
             (p.hot ? '<span class="tag tag--hot">' + t("common.hot") + '</span>' : '') +
           '</div>' +
           '<h3 class="prow__name">' + pName(p) + '</h3>' +
           '<table class="spectable"><tbody>' +
             '<tr><th>' + t("common.size") + '</th><td>' + p.size + '</td></tr>' +
-            '<tr><th>' + t("common.weight") + '</th><td>' + p.weight + '</td></tr>' +
+            '<tr><th>' + t("common.weight") + '</th><td>' + p.weight + ' · G.W. ' + p.grossWeight + '</td></tr>' +
             '<tr><th>' + t("common.material") + '</th><td>' + (LANG === "zh" ? p.material.zh : p.material.en) + '</td></tr>' +
             '<tr><th>' + t("common.carton") + '</th><td>' + p.carton + '</td></tr>' +
-            '<tr><th>' + t("common.container") + '</th><td>20GP: ' + p.qty20gp + ' pcs &nbsp;·&nbsp; 40HQ: ' + p.qty40hq + ' pcs</td></tr>' +
+            '<tr><th>MOQ</th><td>' + p.moq + '</td></tr>' +
           '</tbody></table>' +
           '<ul class="feat">' + feats + '</ul>' +
           '<div class="prow__foot">' +
             '<div><div style="font-size:.78rem;color:var(--ink-3);font-weight:650;margin-bottom:6px">' +
-              t("common.priceTiers") + ' · ' + C.priceTerm + '</div>' +
-              '<div class="tierbox">' + tiers + '</div></div>' +
+              (LANG === "zh" ? "Excel 目录参考单价" : "Excel catalogue reference price") + '</div>' +
+              '<div class="tierbox"><div class="is-best"><span>USD</span><b>' + money(p.basePrice) +
+              '</b><span>' + t("common.perPiece") + '</span></div><div><span>RMB</span><b>' + rmb +
+              '</b><span>' + t("common.perPiece") + '</span></div></div></div>' +
             '<div class="btn-row">' +
               '<button class="btn btn--primary js-add" data-code="' + p.code + '">' + t("common.addToInquiry") + '</button>' +
               '<a class="btn btn--wa js-wa" data-wa-text="' + waText(p) + '" target="_blank" rel="noopener">' +
@@ -209,25 +208,20 @@
   function priceTable() {
     var box = document.getElementById("tierTable");
     if (!box) return;
-    var large = P.filter(function (p) { return p.type === "large"; });
-    var small = P.filter(function (p) { return p.type === "small"; });
-    var minL = Math.min.apply(null, large.map(function (p) { return p.basePrice; }));
-    var minS = Math.min.apply(null, small.map(function (p) { return p.basePrice; }));
-
-    var rows = C.tiers.map(function (tr, i) {
-      var d = Math.round((1 - tr.discount) * 100);
-      return '<tr' + (i > 0 ? ' class="is-hl"' : '') + '>' +
-        '<td><b>' + tierLabel(i) + '</b></td>' +
-        '<td>' + (d ? (LANG === "zh" ? (d + "% OFF") : (d + "% OFF")) : (LANG === "zh" ? "基础价" : "Base")) + '</td>' +
-        '<td>' + (LANG === "zh" ? "低至 " : "from ") + '<b>' + money(tierPrice(minL, i)) + '</b>' + t("common.perPiece") + '</td>' +
-        '<td>' + (LANG === "zh" ? "低至 " : "from ") + '<b>' + money(tierPrice(minS, i)) + '</b>' + t("common.perPiece") + '</td>' +
-        '</tr>';
+    var rows = K.map(function (cat) {
+      var items = P.filter(function (p) { return p.category === cat.id; });
+      var prices = items.map(function (p) { return p.basePrice; }).filter(function (n) { return n > 0; });
+      var min = Math.min.apply(null, prices), max = Math.max.apply(null, prices);
+      var label = LANG === "zh" ? cat.zh : cat.en;
+      return "<tr><td><b>" + label + "</b></td><td>" + items.length + "</td><td>" +
+        money(min) + " – " + money(max) + "</td><td>" +
+        (LANG === "zh" ? "按具体产品 MOQ" : "See item MOQ") + "</td></tr>";
     }).join("");
-
-    box.innerHTML = '<table class="data"><thead><tr>' +
-      '<th>' + t("home.tierCol1") + '</th><th>' + t("home.tierCol2") + '</th>' +
-      '<th>' + t("home.tierCol3") + '</th><th>' + t("home.tierCol4") + '</th>' +
-      '</tr></thead><tbody>' + rows + '</tbody></table>';
+    box.innerHTML = '<table class="data"><thead><tr><th>' +
+      (LANG === "zh" ? "产品系列" : "Product Series") + '</th><th>' +
+      (LANG === "zh" ? "型号数量" : "Models") + '</th><th>' +
+      (LANG === "zh" ? "美元参考价" : "USD Reference Range") + '</th><th>MOQ</th></tr></thead><tbody>' +
+      rows + '</tbody></table>';
   }
 
   /* ================= 6. 询盘暂存 ================= */
@@ -389,17 +383,33 @@
     var clear = document.getElementById("inqClear");
     if (clear) clear.addEventListener("click", function () { setCart([]); });
 
-    // 筛选
+    // 产品分类筛选与搜索
+    function applyProductFilter() {
+      var active = document.querySelector(".filters button.is-on");
+      var filter = active ? active.getAttribute("data-filter") : "all";
+      var search = document.getElementById("productSearch");
+      var query = search ? search.value.trim().toLowerCase() : "";
+      var visible = 0;
+      document.querySelectorAll(".prow").forEach(function (r) {
+        var categoryOK = filter === "all" || r.getAttribute("data-category") === filter;
+        var searchOK = !query || (r.getAttribute("data-search") || "").indexOf(query) >= 0;
+        var show = categoryOK && searchOK;
+        r.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+      var count = document.getElementById("productCount");
+      if (count) count.textContent = (LANG === "zh" ? "显示 " : "Showing ") + visible +
+        (LANG === "zh" ? " 个产品" : " products");
+    }
     document.querySelectorAll(".filters button").forEach(function (b) {
       b.addEventListener("click", function () {
         document.querySelectorAll(".filters button").forEach(function (x) { x.classList.remove("is-on"); });
         b.classList.add("is-on");
-        var f = b.getAttribute("data-filter");
-        document.querySelectorAll(".prow").forEach(function (r) {
-          r.style.display = (f === "all" || r.getAttribute("data-type") === f) ? "" : "none";
-        });
+        applyProductFilter();
       });
     });
+    var search = document.getElementById("productSearch");
+    if (search) search.addEventListener("input", applyProductFilter);
 
     // 高亮当前导航
     var page = document.body.getAttribute("data-page");
@@ -409,8 +419,26 @@
   }
 
   /* ================= 9. 渲染入口 ================= */
+  function renderFilters() {
+    var box = document.getElementById("productFilters");
+    if (!box) return;
+    if (!box.children.length) {
+      box.innerHTML = '<button class="is-on" data-filter="all"></button>' +
+        K.map(function (cat) { return '<button data-filter="' + cat.id + '"></button>'; }).join("");
+    }
+    Array.prototype.forEach.call(box.children, function (b) {
+      var id = b.getAttribute("data-filter");
+      if (id === "all") b.textContent = LANG === "zh" ? "全部产品" : "All Products";
+      else {
+        var cat = K.find(function (c) { return c.id === id; });
+        b.textContent = cat ? (LANG === "zh" ? cat.zh : cat.en) : id;
+      }
+    });
+  }
+
   function renderAll() {
     injectConfig();
+    renderFilters();
 
     var hot = document.getElementById("hotGrid");
     if (hot) hot.innerHTML = P.filter(function (p) { return p.hot; }).slice(0, 4).map(card).join("");
@@ -419,12 +447,19 @@
     if (all) {
       all.innerHTML = P.map(row).join("");
       var on = document.querySelector(".filters button.is-on");
-      if (on && on.getAttribute("data-filter") !== "all") {
-        var f = on.getAttribute("data-filter");
-        document.querySelectorAll(".prow").forEach(function (r) {
-          r.style.display = (r.getAttribute("data-type") === f) ? "" : "none";
-        });
-      }
+      var f = on ? on.getAttribute("data-filter") : "all";
+      var search = document.getElementById("productSearch");
+      var query = search ? search.value.trim().toLowerCase() : "";
+      var visible = 0;
+      document.querySelectorAll(".prow").forEach(function (r) {
+        var show = (f === "all" || r.getAttribute("data-category") === f) &&
+          (!query || (r.getAttribute("data-search") || "").indexOf(query) >= 0);
+        r.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+      var count = document.getElementById("productCount");
+      if (count) count.textContent = (LANG === "zh" ? "显示 " : "Showing ") + visible +
+        (LANG === "zh" ? " 个产品" : " products");
     }
 
     priceTable();
