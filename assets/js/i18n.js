@@ -231,7 +231,7 @@ window.I18N = {
   "contact.wayMailH":{ zh: "邮箱", en: "Email" },
   "contact.wayMailP":{ zh: "适合发送采购清单与正式文件", en: "Best for purchase lists and formal documents" },
   "contact.wayPhoneH":{ zh: "电话", en: "Phone" },
-  "contact.wayPhoneP":{ zh: "北京时间 9:00-18:00（周一至周六）", en: "9:00-18:00 Beijing Time (Mon-Sat)" },
+  "contact.wayPhoneP":{ zh: "北京时间 7:00-21:00（周一至周日）", en: "7:00-21:00 Beijing Time (Mon-Sun)" },
   "contact.wayAddrH": { zh: "工厂地址", en: "Factory Address" },
   "contact.wayAddrP": { zh: "欢迎预约参观验厂", en: "Factory visits welcome by appointment" },
 
@@ -298,8 +298,8 @@ window.I18N = {
   "footer.linksH":   { zh: "快速导航", en: "Quick Links" },
   "footer.contactH": { zh: "联系我们", en: "Contact" },
   "footer.hoursH":   { zh: "工作时间", en: "Business Hours" },
-  "footer.hoursP":   { zh: "周一至周六 9:00 - 18:00（北京时间 GMT+8）<br>WhatsApp 消息通常 2 小时内回复",
-                       en: "Mon - Sat, 9:00 - 18:00 (Beijing Time GMT+8)<br>WhatsApp messages usually answered within 2 hours" },
+  "footer.hoursP":   { zh: "周一至周日 7:00 - 21:00（北京时间 GMT+8）<br>WhatsApp 消息通常 2 小时内回复",
+                       en: "Mon - Sun, 7:00 - 21:00 (Beijing Time GMT+8)<br>WhatsApp messages usually answered within 2 hours" },
   "footer.rights":   { zh: "版权所有", en: "All rights reserved." },
   "footer.disclaim": { zh: "本站产品图片与规格仅供参考，实际以确认样品为准。",
                        en: "Product images and specifications are for reference; the approved sample prevails." }
