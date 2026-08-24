@@ -17,11 +17,11 @@ window.SITE_CONFIG = {
   /* ---------- 2. 联系方式 / Contact ---------- */
   // ★ WhatsApp 号码：必须是国际格式，只留数字，不要 + 号、空格、横线
   //   例：中国手机 13812345678 → "8613812345678"（86 是中国国码）
-  whatsapp: "8613800000000",
-  whatsappDisplay: "+86 138 0000 0000",   // ★ 页面上显示的号码样式
+  whatsapp: "8618872303177",
+  whatsappDisplay: "+86 188 7230 3177",   // ★ 页面上显示的号码样式
 
-  email: "sales@pawnest-example.com",     // ★ 收询盘的邮箱（务必改成你能收到邮件的邮箱）
-  phone: "+86 138 0000 0000",             // ★ 电话
+  email: "hoangkyshsj67@gmail.com",     // ★ 收询盘的邮箱（务必改成你能收到邮件的邮箱）
+  phone: "+86 188 7230 3177",             // ★ 电话
   wechat: "pawnest_sales",                // ★ 微信号（可留空 ""）
 
   addressZh: "中国 浙江省 金华市 义乌国际商贸城 XX 栋 XX 号",   // ★ 中文地址
