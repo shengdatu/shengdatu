@@ -11,7 +11,7 @@ window.SITE_CONFIG = {
   /* ---------- 1. 品牌信息 / Brand ---------- */
   brandZh: "盛达途宠物",              // ★ 中文品牌名
   brandEn: "PawNest",               // ★ 英文品牌名
-  companyZh: "派巢宠物用品有限公司",   // ★ 中文公司全称
+  companyZh: "湖北盛达途国际贸易有限公司",   // ★ 中文公司全称
   companyEn: "PawNest Pet Products Co., Ltd.", // ★ 英文公司全称
 
   /* ---------- 2. 联系方式 / Contact ---------- */
