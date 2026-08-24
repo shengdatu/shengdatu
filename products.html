@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-title-key="prod.title">Product Catalogue | PawNest</title>
+<meta name="description" content="Full cat tree catalogue with item codes NO.1-NO.8. Large and small models. MOQ 200 pcs, mixed orders. Wholesale pricing tiers.">
+<link rel="icon" href="assets/images/site/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="products">
+
+<!-- ===== 顶栏 ===== -->
+<div class="topbar"><div class="wrap topbar__in">
+  <div class="topbar__facts">
+    <span><span class="dot"></span> <span class="cfg-moq">200</span> pcs MOQ</span>
+    <span><span class="dot"></span> <span data-i18n="common.mixBadge">Mixed Orders OK</span></span>
+    <span><span class="dot"></span> <span data-i18n="common.discountBadge">Discount from 500 pcs</span></span>
+  </div>
+  <a href="contact.html" class="btn btn--sm btn--primary" data-i18n="nav.cta">Get a Quote</a>
+</div></div>
+
+<!-- ===== 导航 ===== -->
+<header class="header"><div class="wrap header__in">
+  <a href="index.html" class="logo"><div class="logo__mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 14c-2.5 0-4.8-1.2-6.2-3 .9-1.5 2.5-2.5 4.3-2.5h3.8c1.8 0 3.4 1 4.3 2.5C16.8 17.7 14.5 19 12 19z"/></svg></div>
+    <div><span class="cfg-brand">PawNest</span><span class="logo__sub">Wholesale</span></div></a>
+  <nav id="nav" class="nav">
+    <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
+    <a href="products.html" data-nav="products" data-i18n="nav.products">Products</a>
+    <a href="about.html" data-nav="about" data-i18n="nav.about">About Us</a>
+    <a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact &amp; Inquiry</a>
+    <a href="terms.html" data-nav="terms" data-i18n="nav.terms">Terms &amp; Privacy</a>
+  </nav>
+  <div class="header__tools">
+    <div class="langsw"><button data-lang="zh">中文</button><button data-lang="en" class="is-on">EN</button></div>
+    <button id="burger" class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- ===== 页头 ===== -->
+<section class="section--tight" style="background:var(--bg-2);border-bottom:1px solid var(--line)"><div class="wrap center">
+  <p class="eyebrow" data-i18n="prod.h1">Product Catalogue</p>
+  <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem)" data-i18n="prod.h1">Product Catalogue</h1>
+  <p class="lead" data-i18n="prod.sub">Every model carries a unique item code (NO.1 - NO.8). Just give us the code and quantity to order.</p>
+</div></section>
+
+<!-- ===== 筛选 + 产品列表 ===== -->
+<div class="section"><div class="wrap">
+  <div class="filters">
+    <button class="is-on" data-filter="all" data-i18n="prod.filterAll">All Models</button>
+    <button data-filter="large" data-i18n="prod.filterLarge">Large (135cm+)</button>
+    <button data-filter="small" data-i18n="prod.filterSmall">Small (under 135cm)</button>
+  </div>
+  <div id="allProducts"></div>
+</div></div>
+
+<!-- ===== 混批说明 ===== -->
+<div class="section section--alt"><div class="wrap">
+  <div class="infobox">
+    <h3 data-i18n="prod.mixTitle">Mixed Order Rules</h3>
+    <ul>
+      <li data-i18n="prod.mixP1">Ship once total order reaches 200 pcs; any combination of item codes is allowed.</li>
+      <li data-i18n="prod.mixP2">Minimum 50 pcs per single model (production line requirement).</li>
+      <li data-i18n="prod.mixP3">Discounts are based on total order quantity, not per model — mixed orders still reach the 500-pc tier.</li>
+      <li data-i18n="prod.mixP4">Different models can share one container; we optimise the loading plan to save you freight.</li>
+    </ul>
+  </div>
+</div></div>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer"><div class="wrap footer__grid">
+  <div>
+    <div class="footer__logo"><div class="logo__mark" style="width:32px;height:32px;border-radius:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 14c-2.5 0-4.8-1.2-6.2-3 .9-1.5 2.5-2.5 4.3-2.5h3.8c1.8 0 3.4 1 4.3 2.5C16.8 17.7 14.5 19 12 19z"/></svg></div>PawNest</div>
+    <p data-i18n="footer.aboutP">Professional cat tree manufacturer supplying wholesale buyers worldwide.</p>
+  </div>
+  <div>
+    <h4 data-i18n="footer.linksH">Quick Links</h4>
+    <ul>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact &amp; Inquiry</a></li>
+      <li><a href="terms.html" data-i18n="nav.terms">Terms &amp; Privacy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-i18n="footer.contactH">Contact</h4>
+    <ul>
+      <li>Email: <a class="js-mail cfg-email" href="#">sales@pawnest-example.com</a></li>
+      <li>WhatsApp: <a class="js-wa cfg-whatsapp" href="#" data-wa-text="">—</a></li>
+      <li>Tel: <a class="js-tel cfg-phone" href="#">—</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-i18n="footer.hoursH">Business Hours</h4>
+    <p data-i18n="footer.hoursP">Mon - Sat, 9:00 - 18:00 (Beijing Time GMT+8)</p>
+  </div>
+</div><div class="wrap footer__bottom">
+  <span>&copy; <span class="cfg-year">2025</span> <span class="cfg-company">PawNest Pet Products Co., Ltd.</span>. <span data-i18n="footer.rights">All rights reserved.</span></span>
+  <span data-i18n="footer.disclaim">Product images and specifications are for reference.</span>
+</div></footer>
+
+<!-- 浮动按钮 -->
+<div class="floats">
+  <a class="fab fab--wa js-wa" href="#" data-wa-text="" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M17.47 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.2-.7-.9-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 1.9 3 4.7 4.2 2.3 1 2.8.8 3.3.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4zM12 2C6.48 2 2 6.48 2 12c0 1.84.5 3.56 1.37 5.03L2 22l5.28-1.32c1.39.88 3.03 1.38 4.72 1.38 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.56 0-3.03-.4-4.31-1.09l-.31-.19-3.22.81.82-3.13-.2-.33A8.196 8.196 0 013.8 12c0-4.53 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.68 8.2-8.2 8.2z"/></svg>
+    <span class="fab__tip" data-i18n="common.whatsapp">Chat on WhatsApp</span>
+  </a>
+  <button id="toTop" class="fab fab--top" aria-label="Back to top">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+</div>
+
+<div id="inqBar" class="inqbar">
+  <span id="inqList" class="inqbar__list"></span>
+  <a id="inqGo" href="contact.html" class="btn btn--sm btn--primary">Go to inquiry form →</a>
+  <button id="inqClear" class="inqbar__x">Clear</button>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-title-key="contact.title">Contact &amp; Inquiry | PawNest</title>
+<meta name="description" content="Send a wholesale inquiry for cat trees. Get a quote within 24 hours. WhatsApp, email, and PayPal payment supported.">
+<link rel="icon" href="assets/images/site/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+<!-- ===== 顶栏 ===== -->
+<div class="topbar"><div class="wrap topbar__in">
+  <div class="topbar__facts">
+    <span><span class="dot"></span> <span class="cfg-moq">200</span> pcs MOQ</span>
+    <span><span class="dot"></span> <span data-i18n="common.mixBadge">Mixed Orders OK</span></span>
+  </div>
+  <a href="#inqForm" class="btn btn--sm btn--primary" data-i18n="nav.cta">Get a Quote</a>
+</div></div>
+
+<!-- ===== 导航 ===== -->
+<header class="header"><div class="wrap header__in">
+  <a href="index.html" class="logo"><div class="logo__mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 14c-2.5 0-4.8-1.2-6.2-3 .9-1.5 2.5-2.5 4.3-2.5h3.8c1.8 0 3.4 1 4.3 2.5C16.8 17.7 14.5 19 12 19z"/></svg></div>
+    <div><span class="cfg-brand">PawNest</span><span class="logo__sub">Wholesale</span></div></a>
+  <nav id="nav" class="nav">
+    <a href="index.html" data-nav="home" data-i18n="nav.home">Home</a>
+    <a href="products.html" data-nav="products" data-i18n="nav.products">Products</a>
+    <a href="about.html" data-nav="about" data-i18n="nav.about">About Us</a>
+    <a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact &amp; Inquiry</a>
+    <a href="terms.html" data-nav="terms" data-i18n="nav.terms">Terms &amp; Privacy</a>
+  </nav>
+  <div class="header__tools">
+    <div class="langsw"><button data-lang="zh">中文</button><button data-lang="en" class="is-on">EN</button></div>
+    <button id="burger" class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- ===== 页头 ===== -->
+<section class="section--tight" style="background:var(--bg-2);border-bottom:1px solid var(--line)"><div class="wrap center">
+  <p class="eyebrow" data-i18n="contact.h1">Contact &amp; Inquiry</p>
+  <h1 style="font-size:clamp(1.6rem,3.5vw,2.4rem)" data-i18n="contact.h1">Contact &amp; Inquiry</h1>
+  <p class="lead" data-i18n="contact.sub">Fill in the form below or reach us directly on WhatsApp.</p>
+</div></section>
+
+<!-- ===== 询盘表单 + 联系方式 ===== -->
+<div class="section"><div class="wrap grid grid--2">
+
+  <!-- 左：表单 -->
+  <div>
+    <div class="formcard" id="inqFormWrap">
+      <h2 data-i18n="contact.formH">Inquiry Form</h2>
+      <p style="font-size:.9rem;color:var(--ink-3);margin-bottom:20px" data-i18n="contact.formSub">Fields marked * are required.</p>
+
+      <form id="inqForm" autocomplete="on" novalidate>
+        <div class="fgrid">
+          <div class="field"><label for="fName"><i>*</i> <span data-i18n="contact.fName">Your Name</span></label>
+            <input type="text" id="fName" name="name" placeholder="" data-i18n-ph="contact.fName"></div>
+          <div class="field"><label for="fCompany"><span data-i18n="contact.fCompany">Company Name</span></label>
+            <input type="text" id="fCompany" name="company" placeholder="" data-i18n-ph="contact.fCompany"></div>
+          <div class="field"><label for="fEmail"><i>*</i> <span data-i18n="contact.fEmail">Email</span></label>
+            <input type="email" id="fEmail" name="email" placeholder="" data-i18n-ph="contact.fEmail"></div>
+          <div class="field"><label for="fPhone"><span data-i18n="contact.fWhats">WhatsApp / Phone</span></label>
+            <input type="tel" id="fPhone" name="phone" placeholder="+86 ..." data-i18n-ph="contact.fWhats"></div>
+          <div class="field"><label for="fCountry"><span data-i18n="contact.fCountry">Country / Region</span></label>
+            <input type="text" id="fCountry" name="country" placeholder="" data-i18n-ph="contact.fCountry"></div>
+          <div class="field"><label for="fPort"><span data-i18n="contact.fPort">Destination Port / City</span></label>
+            <input type="text" id="fPort" name="port" placeholder="" data-i18n-ph="contact.fPort"></div>
+
+          <!-- 产品编号（自动填充） -->
+          <div class="field field--full"><label for="fItems"><i>*</i> <span data-i18n="contact.fItems">Item Codes of Interest</span></label>
+            <input type="text" id="fItems" name="items" placeholder="" data-i18n-ph="contact.fItemsHint">
+            <span class="hint" data-i18n="contact.fItemsHint">e.g. NO.1 × 100 pcs, NO.5 × 150 pcs (mixed order OK)</span></div>
+
+          <div class="field"><label for="fQty"><span data-i18n="contact.fQty">Estimated Total Quantity (pcs)</span></label>
+            <input type="number" id="fQty" name="qty" min="200" step="100" placeholder="200" data-i18n-ph="contact.fQty"></div>
+          <div class="field"><label for="fType"><span data-i18n="contact.fType">Buyer Type</span></label>
+            <select id="fType" name="btype">
+              <option value="" data-i18n="contact.fType1">Wholesaler / Distributor</option>
+              <option value="retail" data-i18n="contact.fType2">Retail Store / Chain</option>
+              <option value="ecommerce" data-i18n="contact.fType3">E-commerce Seller (Amazon etc.)</option>
+              <option value="agent" data-i18n="contact.fType4">Sourcing Agent</option>
+              <option value="other" data-i18n="contact.fType5">Other</option>
+            </select></div>
+
+          <div class="field field--full"><label for="fMsg"><span data-i18n="contact.fMsg">Your Requirements</span></label>
+            <textarea id="fMsg" name="msg" rows="5" placeholder="" data-i18n-ph="contact.fMsgHint"></textarea>
+            <span class="hint" data-i18n="contact.fMsgHint">Tell us about: OEM branding, packaging requirements, target price...</span></div>
+        </div>
+
+        <div class="btn-row" style="margin-top:22px">
+          <button type="submit" class="btn btn--primary btn--lg" data-i18n="contact.submit">Submit Inquiry</button>
+          <button type="button" id="sendWa" class="btn btn--wa btn--lg" data-i18n="contact.submitWa">Send via WhatsApp</button>
+        </div>
+      </form>
+      <div id="formMsg" class="formmsg"></div>
+    </div>
+  </div>
+
+  <!-- 右：联系方式 + PayPal -->
+  <div>
+    <h2 data-i18n="contact.wayH">Other Ways to Reach Us</h2>
+
+    <div class="waycard" style="margin-bottom:14px">
+      <div class="waycard__t"><div class="waycard__ico ico--wa"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.47 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.2-.7-.9-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 1.9 3 4.7 4.2 2.3 1 2.8.8 3.3.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4zM12 2C6.48 2 2 6.48 2 12c0 1.84.5 3.56 1.37 5.03L2 22l5.28-1.32c1.39.88 3.03 1.38 4.72 1.38 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.56 0-3.03-.4-4.31-1.09l-.31-.19-3.22.81.82-3.13-.2-.33A8.196 8.196 0 013.8 12c0-4.53 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.68 8.2-8.2 8.2z"/></svg></div>
+        <span data-i18n="contact.wayWaH">WhatsApp (fastest)</span></div>
+      <p data-i18n="contact.wayWaP">Tap to start chatting; you can send photos for quoting</p>
+      <p class="waycard__v"><a class="js-wa cfg-whatsapp" href="#" data-wa-text="">—</a></p>
+    </div>
+
+    <div class="waycard" style="margin-bottom:14px">
+      <div class="waycard__t"><div class="waycard__ico ico--mail"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <span data-i18n="contact.wayMailH">Email</span></div>
+      <p data-i18n="contact.wayMailP">Best for purchase lists and formal documents</p>
+      <p class="waycard__v"><a class="js-mail cfg-email" href="#">sales@pawnest-example.com</a></p>
+    </div>
+
+    <div class="waycard" style="margin-bottom:14px">
+      <div class="waycard__t"><div class="waycard__ico ico--tel"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <span data-i18n="contact.wayPhoneH">Phone</span></div>
+      <p data-i18n="contact.wayPhoneP">9:00-18:00 Beijing Time (Mon-Sat)</p>
+      <p class="waycard__v"><a class="js-tel cfg-phone" href="#">—</a></p>
+    </div>
+
+    <div class="waycard" style="margin-bottom:26px">
+      <div class="waycard__t"><div class="waycard__ico ico--map"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <span data-i18n="contact.wayAddrH">Factory Address</span></div>
+      <p data-i18n="contact.wayAddrP">Factory visits welcome by appointment</p>
+      <p class="waycard__v cfg-address">—</p>
+    </div>
+
+    <!-- PayPal -->
+    <div class="paybox">
+      <h2 data-i18n="contact.payH">Payment</h2>
+      <p data-i18n="contact.payP">Samples, small orders and deposits can be paid via PayPal — secure and fast.</p>
+      <a class="btn btn--pp js-pay" href="#" target="_blank" rel="noopener" data-i18n="contact.payBtn">Pay with PayPal</a>
+      <div class="payacct">
+        <strong data-i18n="contact.payAcct">PayPal account:</strong>
+        <code class="cfg-paypal">hoangkyshsj67@gmail.com</code>
+        <button class="btn btn--sm btn--ghost js-copy" data-copy="" data-copy-target=".cfg-paypal" style="margin-left:auto;padding:5px 11px;font-size:.78rem" data-i18n="common.copy">Copy</button>
+      </div>
+      <p style="font-size:.87rem;color:var(--ink-3)" data-i18n="contact.payNote">Please note your company name and item codes in the payment memo so we can match your order quickly.</p>
+
+      <h3 style="margin-top:18px;margin-bottom:8px;font-size:1rem" data-i18n="contact.payStepsH">How to pay by PayPal</h3>
+      <ol class="paysteps">
+        <li data-i18n="contact.payStep1">Open your PayPal account and choose "Send Payment"</li>
+        <li data-i18n="contact.payStep2">Enter our PayPal email as the recipient (shown above)</li>
+        <li data-i18n="contact.payStep3">Select "Goods and Services" and enter the amount in USD</li>
+        <li data-i18n="contact.payStep4">Add your company name + item codes in the note, then send</li>
+        <li data-i18n="contact.payStep5">Send us the payment screenshot and we start production immediately</li>
+      </ol>
+    </div>
+  </div>
+</div></div>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer"><div class="wrap footer__grid">
+  <div>
+    <div class="footer__logo"><div class="logo__mark" style="width:32px;height:32px;border-radius:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 3c1.7 0 3 1.3 3 3s-1.3 3-3 3-3-1.3-3-3 1.3-3 3-3zm0 14c-2.5 0-4.8-1.2-6.2-3 .9-1.5 2.5-2.5 4.3-2.5h3.8c1.8 0 3.4 1 4.3 2.5C16.8 17.7 14.5 19 12 19z"/></svg></div>PawNest</div>
+    <p data-i18n="footer.aboutP">Professional cat tree manufacturer supplying wholesale buyers worldwide.</p>
+  </div>
+  <div>
+    <h4 data-i18n="footer.linksH">Quick Links</h4>
+    <ul>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact &amp; Inquiry</a></li>
+      <li><a href="terms.html" data-i18n="nav.terms">Terms &amp; Privacy</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-i18n="footer.contactH">Contact</h4>
+    <ul>
+      <li>Email: <a class="js-mail cfg-email" href="#">sales@pawnest-example.com</a></li>
+      <li>WhatsApp: <a class="js-wa cfg-whatsapp" href="#" data-wa-text="">—</a></li>
+      <li>Tel: <a class="js-tel cfg-phone" href="#">—</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-i18n="footer.hoursH">Business Hours</h4>
+    <p data-i18n="footer.hoursP">Mon - Sat, 9:00 - 18:00 (Beijing Time GMT+8)</p>
+  </div>
+</div><div class="wrap footer__bottom">
+  <span>&copy; <span class="cfg-year">2025</span> <span class="cfg-company">PawNest Pet Products Co., Ltd.</span>. <span data-i18n="footer.rights">All rights reserved.</span></span>
+  <span data-i18n="footer.disclaim">Product images and specifications are for reference.</span>
+</div></footer>
+
+<div class="floats">
+  <a class="fab fab--wa js-wa" href="#" data-wa-text="" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"><path d="M17.47 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.2-.7-.9-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 1.9 3 4.7 4.2 2.3 1 2.8.8 3.3.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4zM12 2C6.48 2 2 6.48 2 12c0 1.84.5 3.56 1.37 5.03L2 22l5.28-1.32c1.39.88 3.03 1.38 4.72 1.38 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.2c-1.56 0-3.03-.4-4.31-1.09l-.31-.19-3.22.81.82-3.13-.2-.33A8.196 8.196 0 013.8 12c0-4.53 3.68-8.2 8.2-8.2s8.2 3.68 8.2 8.2-3.68 8.2-8.2 8.2z"/></svg>
+    <span class="fab__tip" data-i18n="common.whatsapp">Chat on WhatsApp</span>
+  </a>
+  <button id="toTop" class="fab fab--top" aria-label="Back to top">
+    <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/products.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
