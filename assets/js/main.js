@@ -115,6 +115,7 @@
   }
   function categoryLabel(p) { return LANG === "zh" ? p.categoryZh : p.categoryEn; }
   function pName(p) { return LANG === "zh" ? p.nameZh : p.nameEn; }
+  function pMoq(p) { return LANG === "zh" ? (p.moqZh || p.moq) : (p.moqEn || p.moq); }
   function imgTag(p, cls) {
     var ph = "assets/images/placeholder/no1.svg";
     var src = (window.PRODUCT_IMAGES && window.PRODUCT_IMAGES[p.image]) || p.image;
@@ -137,7 +138,7 @@
         '<div class="pcard__body">' +
           '<h3 class="pcard__name">' + pName(p) + '</h3>' +
           '<p class="pcard__spec"><b>' + t("common.size") + '：</b>' + p.size +
-            ' &nbsp;·&nbsp; <b>MOQ：</b>' + p.moq + '</p>' +
+            ' &nbsp;·&nbsp; <b>MOQ：</b>' + pMoq(p) + '</p>' +
           '<div class="pcard__price">' +
             '<div class="pcard__from">' + (LANG === "zh" ? "目录参考单价" : "Catalogue unit price") + '</div>' +
             '<div class="pcard__num">' + money(p.basePrice) + '<small>' + t("common.perPiece") + '</small></div>' +
@@ -153,9 +154,9 @@
 
   function waText(p) {
     return (LANG === "zh"
-      ? "你好，我想询价：" + p.code + " " + p.nameZh + "（" + p.size + "，MOQ：" + p.moq + "）。请提供最新价格、交期和运费。"
+      ? "你好，我想询价：" + p.code + " " + p.nameZh + "（" + p.size + "，MOQ：" + pMoq(p) + "）。请提供最新价格、交期和运费。"
       : "Hello, I would like a quote for " + p.code + " " + p.nameEn + " (" + p.size +
-        ", MOQ: " + p.moq + "). Please provide the latest price, lead time and shipping cost.").replace(/"/g, "&quot;");
+        ", MOQ: " + pMoq(p) + "). Please provide the latest price, lead time and shipping cost.").replace(/"/g, "&quot;");
   }
 
   function row(p) {
@@ -179,7 +180,7 @@
             '<tr><th>' + t("common.weight") + '</th><td>' + p.weight + ' · G.W. ' + p.grossWeight + '</td></tr>' +
             '<tr><th>' + t("common.material") + '</th><td>' + (LANG === "zh" ? p.material.zh : p.material.en) + '</td></tr>' +
             '<tr><th>' + t("common.carton") + '</th><td>' + p.carton + '</td></tr>' +
-            '<tr><th>MOQ</th><td>' + p.moq + '</td></tr>' +
+            '<tr><th>MOQ</th><td>' + pMoq(p) + '</td></tr>' +
           '</tbody></table>' +
           '<ul class="feat">' + feats + '</ul>' +
           '<div class="prow__foot">' +
@@ -475,3 +476,4 @@
     syncBar();
   });
 })();
+
