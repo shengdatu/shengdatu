@@ -30,7 +30,7 @@ window.PRODUCT_CATEGORIES = [
   {
     "id": "solid-wood",
     "zh": "实木系列猫爬架",
-    "en": "Solid Wood Cat Trees"
+    "en": "Solid-Wood Cat Trees"
   },
   {
     "id": "melamine",
@@ -866,7 +866,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 30,
-    "priceRmb": 210.0,
+    "priceRmb": 210,
     "carton": "1 pcs/carton, 61 × 28 × 56 cm",
     "cbm": 0.095,
     "moq": "100 pcs",
@@ -1033,7 +1033,7 @@ window.PRODUCTS = [
     "category": "classic",
     "categoryZh": "外贸经典系列",
     "categoryEn": "Classic Export Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/01-029-mp21.webp",
     "nameZh": "三层双窝猫爬架 【亚马逊标准箱】",
     "nameEn": "Three-Tier Double-Condo Cat Tree [Amazon Standard Carton]",
     "size": "42 × 34 × 98 cm",
@@ -1208,7 +1208,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 12,
-    "priceRmb": 84.0,
+    "priceRmb": 84,
     "carton": "1 pcs/carton, 43 × 17 × 37 cm",
     "cbm": 0.027,
     "moq": "200 pcs",
@@ -1398,7 +1398,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 12,
-    "priceRmb": 84.0,
+    "priceRmb": 84,
     "carton": "1 pcs/carton, 61 × 15 × 41 cm",
     "cbm": 0.037515,
     "moq": "100 pcs",
@@ -1930,7 +1930,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 18,
-    "priceRmb": 126.0,
+    "priceRmb": 126,
     "carton": "1 pcs/carton, 51 × 20 × 51 cm",
     "cbm": 0.05202,
     "moq": "200 pcs",
@@ -2272,7 +2272,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 6,
-    "priceRmb": 42.0,
+    "priceRmb": 42,
     "carton": "1 pcs/carton, 40 × 16 × 32 cm",
     "cbm": 0.02048,
     "moq": "In Stock",
@@ -2994,7 +2994,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 36,
-    "priceRmb": 252.0,
+    "priceRmb": 252,
     "carton": "1 pcs/carton, 58 × 28 × 45 cm",
     "cbm": 0.07308,
     "moq": "In Stock",
@@ -3678,7 +3678,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 30,
-    "priceRmb": 210.0,
+    "priceRmb": 210,
     "carton": "1 pcs/carton, 53 × 27 × 53 cm",
     "cbm": 0.075,
     "moq": "100 pcs",
@@ -3883,7 +3883,7 @@ window.PRODUCTS = [
     "category": "designer",
     "categoryZh": "设计师系列",
     "categoryEn": "Designer Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/02-037-ma42.webp",
     "nameZh": "仙人掌款通天柱",
     "nameEn": "Cactus Floor-to-Ceiling Cat Tree",
     "size": "40 × 24 × 226 cm",
@@ -3959,7 +3959,7 @@ window.PRODUCTS = [
     "category": "designer",
     "categoryZh": "设计师系列",
     "categoryEn": "Designer Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/02-039-mm101.webp",
     "nameZh": "仙人掌猫爬架+楼梯二合一玩具",
     "nameEn": "2-in-1 Cactus Cat Tree and Stairs Toy",
     "size": "55 × 40 × 56 cm",
@@ -4476,7 +4476,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 24,
-    "priceRmb": 168.0,
+    "priceRmb": 168,
     "carton": "1 pcs/carton, 52 × 40 × 52 cm",
     "cbm": 0.10816,
     "moq": "In Stock",
@@ -4681,7 +4681,7 @@ window.PRODUCTS = [
     "category": "designer",
     "categoryZh": "设计师系列",
     "categoryEn": "Designer Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/02-058-mf10.webp",
     "nameZh": "太阳花向日葵猫爬架- 小号支柱葵",
     "nameEn": "Sunflower Cat Tree - Small Pillar Model",
     "size": "36 × 36 × 66 cm",
@@ -4795,7 +4795,7 @@ window.PRODUCTS = [
     "category": "designer",
     "categoryZh": "设计师系列",
     "categoryEn": "Designer Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/02-061-mf13.webp",
     "nameZh": "太阳花向日葵猫爬架- 特大号抱菇花",
     "nameEn": "Sunflower Cat Tree - Extra-Large Mushroom Model",
     "size": "40 × 40 × 90 cm",
@@ -5289,7 +5289,7 @@ window.PRODUCTS = [
     "category": "designer",
     "categoryZh": "设计师系列",
     "categoryEn": "Designer Series",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/02-074-mr05.webp",
     "nameZh": "蝶恋花猫爬架 升级款中号",
     "nameEn": "Butterfly & Flower Cat Tree - Upgraded Medium",
     "size": "41 × 50 × 86 cm",
@@ -6581,7 +6581,7 @@ window.PRODUCTS = [
     "category": "toys-small",
     "categoryZh": "玩具小爬架系列",
     "categoryEn": "Toys & Small Cat Trees",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/03-018-mh36-hl.webp",
     "nameZh": "彩色转盘猫爬架",
     "nameEn": "Colorful Turntable Cat Tree",
     "size": "26 × 26 × 35 cm",
@@ -6680,7 +6680,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 6,
-    "priceRmb": 42.0,
+    "priceRmb": 42,
     "carton": "1 pcs/carton, 36 × 19 × 33 cm",
     "cbm": 0.022572,
     "moq": "In Stock",
@@ -7189,7 +7189,7 @@ window.PRODUCTS = [
     "category": "toys-small",
     "categoryZh": "玩具小爬架系列",
     "categoryEn": "Toys & Small Cat Trees",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/03-034-mh65-f.webp",
     "nameZh": "彩色糖果猫抓柱 粉色",
     "nameEn": "Colorful Candy Cat Scratching Post Pink",
     "size": "35 × 35 × 53 cm",
@@ -7569,7 +7569,7 @@ window.PRODUCTS = [
     "category": "toys-small",
     "categoryZh": "玩具小爬架系列",
     "categoryEn": "Toys & Small Cat Trees",
-    "image": "assets/images/placeholder/no1.svg",
+    "image": "assets/images/products/03-044-mh02-s.webp",
     "nameZh": "单色跳台黄麻凳",
     "nameEn": "Solid-Color Platform Jute Stool",
     "size": "30 × 30 × 32 cm",
@@ -9948,7 +9948,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 6,
-    "priceRmb": 42.0,
+    "priceRmb": 42,
     "carton": "— pcs/carton, 55 × 45 × 3 cm",
     "cbm": 0,
     "moq": "In Stock",
@@ -11810,7 +11810,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 6,
-    "priceRmb": 42.0,
+    "priceRmb": 42,
     "carton": "— pcs/carton, 54 × 33 × 3 cm",
     "cbm": 0,
     "moq": "In Stock",
@@ -12304,7 +12304,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 2,
-    "priceRmb": 14.0,
+    "priceRmb": 14,
     "carton": "1 pcs/carton, 62 × 46 × 11 cm",
     "cbm": 0.031,
     "moq": "10 pcs",
@@ -12760,7 +12760,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 6,
-    "priceRmb": 42.0,
+    "priceRmb": 42,
     "carton": "1 pcs/carton, 42 × 12 × 42 cm",
     "cbm": 0.021,
     "moq": "200 pcs",
@@ -13064,7 +13064,7 @@ window.PRODUCTS = [
       ]
     },
     "basePrice": 18,
-    "priceRmb": 126.0,
+    "priceRmb": 126,
     "carton": "1 pcs/carton, 46 × 31 × 21 cm",
     "cbm": 0.0299,
     "moq": "200 pcs",
@@ -13113,4 +13113,3 @@ window.PRODUCTS = [
     "hot": false
   }
 ];
-
