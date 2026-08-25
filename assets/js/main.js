@@ -118,9 +118,12 @@
   function pMoq(p) { return LANG === "zh" ? (p.moqZh || p.moq) : (p.moqEn || p.moq); }
   function imgTag(p, cls) {
     var ph = "assets/images/placeholder/no1.svg";
-    var src = (window.PRODUCT_IMAGES && window.PRODUCT_IMAGES[p.image]) || p.image;
+    var src = window.PRODUCT_IMAGES && window.PRODUCT_IMAGES[p.image];
+    var deferred = !src && window.PRODUCT_IMAGE_LOADER;
+    if (!src) src = deferred ? window.PRODUCT_IMAGE_LOADER.placeholder : p.image;
     return '<img src="' + src + '" alt="' + pName(p).replace(/"/g, "") + ' ' + p.code +
-      '" loading="lazy" onerror="this.onerror=null;this.src=\'' + ph + '\'"' + (cls ? ' class="' + cls + '"' : '') + '>';
+      '" loading="lazy"' + (deferred ? ' data-product-image="' + p.image.replace(/"/g, "") + '"' : '') +
+      ' onerror="this.onerror=null;this.src=\'' + ph + '\'"' + (cls ? ' class="' + cls + '"' : '') + '>';
   }
 
   /* ================= 4. 产品卡渲染 ================= */
@@ -531,6 +534,7 @@
     }
 
     priceTable();
+    if (window.PRODUCT_IMAGE_LOADER) window.PRODUCT_IMAGE_LOADER.observe(document);
     injectConfig();   // 再跑一次，给新渲染出来的按钮加链接
   }
 
