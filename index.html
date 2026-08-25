@@ -6,7 +6,7 @@
 <title data-title-key="home.title">Cat Tree Wholesale | PawNest</title>
 <meta name="description" content="Factory-direct pet product wholesale. MOQ varies by product; contact us for the minimum order quantity for specific items. OEM/ODM supported.">
 <link rel="icon" href="assets/images/site/brand-avatar.png?v=20260825avatar" type="image/png">
-<link rel="stylesheet" href="assets/css/style.css?v=20260825avatar">
+<link rel="stylesheet" href="assets/css/style.css?v=20260825hero">
 </head>
 <body data-page="home">
 
@@ -58,8 +58,29 @@
       <a href="products.html" class="btn btn--ghost btn--lg" data-i18n="home.heroBtn2">Browse Catalogue</a>
     </div>
   </div>
-  <div class="hero__art">
-    <img src="assets/images/site/hero.jpg" alt="Cat tree factory showroom" onerror="this.onerror=null;this.src='assets/images/placeholder/hero.svg'">
+  <div class="hero__art" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Featured cat trees and export capabilities" tabindex="0">
+    <div class="hero__slides">
+      <figure class="hero__slide is-active">
+        <img src="assets/images/site/hero-options/cat-tree-hero-premium-living-room.webp" alt="Premium cat tree in an elegant living room with two cats" fetchpriority="high">
+      </figure>
+      <figure class="hero__slide">
+        <img src="assets/images/site/hero-options/cat-tree-hero-showroom.webp" alt="Premium cat tree collection in a modern showroom" loading="lazy">
+      </figure>
+      <figure class="hero__slide">
+        <img src="assets/images/site/hero-options/cat-tree-hero-warm-lifestyle.webp" alt="Cats enjoying a premium cat tree in a warm home" loading="lazy">
+      </figure>
+      <figure class="hero__slide hero__slide--contain">
+        <img src="assets/images/site/hero-options/export-quality-banner.webp" alt="BSCI certified factory and global export capabilities" loading="lazy">
+      </figure>
+    </div>
+    <button class="hero__arrow hero__arrow--prev" type="button" data-hero-prev aria-label="Previous cover image">&#10094;</button>
+    <button class="hero__arrow hero__arrow--next" type="button" data-hero-next aria-label="Next cover image">&#10095;</button>
+    <div class="hero__dots" role="tablist" aria-label="Choose cover image">
+      <button class="is-active" type="button" data-hero-slide="0" aria-label="Cover image 1" aria-current="true"></button>
+      <button type="button" data-hero-slide="1" aria-label="Cover image 2"></button>
+      <button type="button" data-hero-slide="2" aria-label="Cover image 3"></button>
+      <button type="button" data-hero-slide="3" aria-label="Cover image 4"></button>
+    </div>
     <div class="hero__chip hero__chip--1"><small>From</small><b>$9.60 / pc</b></div>
     <div class="hero__chip hero__chip--2"><small>Export to</small><b>40+ Countries</b></div>
   </div>
@@ -197,7 +218,7 @@
 <script src="assets/js/product-images/product-images-01.js?v=20260825xl"></script>
 <script src="assets/js/products.js?v=20260825xl"></script>
 <script src="assets/js/i18n.js"></script>
-<script src="assets/js/main.js?v=20260824"></script>
+<script src="assets/js/main.js?v=20260825hero"></script>
 </body>
 </html>
 

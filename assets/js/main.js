@@ -419,7 +419,74 @@
     });
   }
 
-  /* ================= 9. 渲染入口 ================= */
+  /* ================= 9. 首页封面轮播 ================= */
+  function initHeroCarousel() {
+    var root = document.getElementById("heroCarousel");
+    if (!root) return;
+
+    var slides = Array.prototype.slice.call(root.querySelectorAll(".hero__slide"));
+    var dots = Array.prototype.slice.call(root.querySelectorAll("[data-hero-slide]"));
+    var prev = root.querySelector("[data-hero-prev]");
+    var next = root.querySelector("[data-hero-next]");
+    var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var current = 0, timer = null;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        var active = i === current;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+      });
+      dots.forEach(function (dot, i) {
+        var active = i === current;
+        dot.classList.toggle("is-active", active);
+        if (active) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    function start() {
+      stop();
+      if (!reducedMotion && slides.length > 1 && !document.hidden) {
+        timer = window.setInterval(function () { show(current + 1); }, 5000);
+      }
+    }
+
+    function choose(index) {
+      show(index);
+      start();
+    }
+
+    if (prev) prev.addEventListener("click", function () { choose(current - 1); });
+    if (next) next.addEventListener("click", function () { choose(current + 1); });
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () { choose(Number(dot.getAttribute("data-hero-slide"))); });
+    });
+    root.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") { event.preventDefault(); choose(current - 1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); choose(current + 1); }
+    });
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", function (event) {
+      if (!root.contains(event.relatedTarget)) start();
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    show(0);
+    start();
+  }
+
+  /* ================= 10. 渲染入口 ================= */
   function renderFilters() {
     var box = document.getElementById("productFilters");
     if (!box) return;
@@ -467,13 +534,13 @@
     injectConfig();   // 再跑一次，给新渲染出来的按钮加链接
   }
 
-  /* ================= 10. 启动 ================= */
+  /* ================= 11. 启动 ================= */
   document.addEventListener("DOMContentLoaded", function () {
     applyI18n();
     renderAll();
     initUI();
+    initHeroCarousel();
     initForm();
     syncBar();
   });
 })();
-
