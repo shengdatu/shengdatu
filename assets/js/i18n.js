@@ -16,7 +16,7 @@ window.I18N = {
   "nav.terms":     { zh: "条款与隐私",   en: "Terms & Privacy" },
   "nav.cta":       { zh: "获取报价",     en: "Get a Quote" },
 
-  "common.moqBadge":     { zh: "起订量 200 件",       en: "MOQ 200 pcs" },
+  "common.moqBadge":     { zh: "不同商品 MOQ 不同，请联系我们了解具体起订量", en: "MOQ varies by product — contact us for details" },
   "common.mixBadge":     { zh: "支持混批",            en: "Mixed Orders OK" },
   "common.discountBadge":{ zh: "500 件以上享折扣",     en: "Discount from 500 pcs" },
   "common.oemBadge":     { zh: "支持 OEM / ODM",      en: "OEM / ODM Available" },
@@ -51,7 +51,8 @@ window.I18N = {
   "home.heroSub": { zh: "完整目录覆盖猫爬架、宠物窝、猫抓板、玩具和实木系列。每款产品标注真实型号、尺寸、包装、重量、美元参考价与 MOQ，支持 OEM / ODM。", en: "Explore our complete catalogue of cat trees, pet beds, houses, scratchers, toys and solid-wood models. Each item lists its code, dimensions, packing, weight, USD reference price and MOQ. OEM / ODM supported." },
   "home.heroBtn1": { zh: "获取批发价目表", en: "Get Wholesale Price List" },
   "home.heroBtn2": { zh: "浏览产品目录",   en: "Browse Catalogue" },
-  "home.stat1":    { zh: "起订量（件）",   en: "MOQ (pcs)" },
+  "home.stat1Value": { zh: "按商品而定",     en: "Varies" },
+  "home.stat1":    { zh: "联系我们了解具体 MOQ", en: "Contact us for item MOQ" },
   "home.stat2":    { zh: "在产型号",       en: "Models in Production" },
   "home.stat3":    { zh: "月产能（件）",   en: "Monthly Capacity (pcs)" },
   "home.stat4":    { zh: "出口国家",       en: "Export Countries" },
@@ -63,9 +64,9 @@ window.I18N = {
   "home.why1H":    { zh: "工厂直营，没有中间商", en: "Direct Factory, No Middleman" },
   "home.why1P":    { zh: "自有 6000㎡ 生产车间与 8 条组装线，从裁板、包绒到剑麻缠绕全流程自控，同等质量下价格比贸易商低 12-18%。",
                      en: "Our own 6,000 m² workshop with 8 assembly lines controls every step from board cutting to plush wrapping and sisal winding — 12-18% below trading-company prices at the same quality." },
-  "home.why2H":    { zh: "200 件起订，支持混批", en: "MOQ 200 pcs, Mixed Orders Welcome" },
-  "home.why2P":    { zh: "首单压力小。可在 200 件内自由组合不同编号型号（单款不低于 50 件），先小批量测款，验证市场后再放大订单。",
-                     en: "Low first-order risk. Combine different item codes within the 200-pc MOQ (min. 50 pcs per model) — test the market first, then scale up." },
+  "home.why2H":    { zh: "不同商品起订量不同", en: "Product-Specific MOQs" },
+  "home.why2P":    { zh: "不同商品 MOQ（最低订购量）不同，请联系我们获取具体起订数量。",
+                     en: "MOQ varies by product. Contact us for the minimum order quantity for specific items." },
   "home.why3H":    { zh: "品控与认证齐全",     en: "Full QC & Compliance" },
   "home.why3P":    { zh: "板材符合 E1 环保标准，面料通过 REACH 检测，剑麻为天然无染色。出货前 100% 全检 + AQL 2.5 抽检，可配合第三方验厂（SGS / BV / Intertek）。",
                      en: "E1-grade boards, REACH-tested fabrics, natural undyed sisal. 100% inspection plus AQL 2.5 sampling before shipment; third-party audits (SGS / BV / Intertek) welcome." },
@@ -112,7 +113,7 @@ window.I18N = {
   "prod.filterLarge": { zh: "大款（135cm 以上）", en: "Large (135cm+)" },
   "prod.filterSmall": { zh: "小款（135cm 以下）", en: "Small (under 135cm)" },
   "prod.mixTitle": { zh: "目录与报价说明", en: "Catalogue & Quotation Notes" },
-  "prod.mixP1": { zh: "每款产品的起订量不同，请以产品详情中标注的 MOQ 为准。", en: "MOQ varies by item; please refer to the MOQ shown in each product listing." },
+  "prod.mixP1": { zh: "不同商品 MOQ（最低订购量）不同，请联系我们获取具体起订数量。", en: "MOQ varies by product. Contact us for the minimum order quantity for specific items." },
   "prod.mixP2": { zh: "网站价格来自 2026 最新价目表，仅作参考，正式价格以询盘报价单或 PI 为准。", en: "Website prices come from the latest 2026 catalogue and are indicative; the written quotation or PI prevails." },
   "prod.mixP3": { zh: "产品尺寸、装箱尺寸、净重、毛重和 CBM 已按 Excel 原表导入。", en: "Product size, carton size, net weight, gross weight and CBM are imported from the source workbook." },
   "prod.mixP4": { zh: "发送产品编号、目标数量和目的港，我们将提供最新价格、交期与运费方案。", en: "Send the item code, target quantity and destination port for current pricing, lead time and shipping options." },
@@ -143,6 +144,7 @@ window.I18N = {
   "about.fact5":  { zh: "组装线",   en: "Assembly Lines" },
   "about.fact6":  { zh: "交货周期", en: "Lead Time" },
   "about.fact7":  { zh: "起订量",   en: "MOQ" },
+  "about.fact7Value": { zh: "按商品而定", en: "Varies by product" },
   "about.fact8":  { zh: "主要市场", en: "Main Markets" },
   "about.fact8v": { zh: "北美、欧洲、中东、东南亚、大洋洲", en: "North America, Europe, Middle East, SE Asia, Oceania" },
 
@@ -169,8 +171,8 @@ window.I18N = {
 
   "about.faqH":  { zh: "常见问题", en: "FAQ" },
   "about.faq1Q": { zh: "最小起订量是多少？可以混批吗？", en: "What is the MOQ? Can I mix models?" },
-  "about.faq1A": { zh: "起订量为 200 件，可自由混批不同编号型号，单款最少 50 件。折扣按订单总件数累计计算。",
-                   en: "MOQ is 200 pcs and you may freely mix different item codes, with a minimum of 50 pcs per model. Discounts are calculated on the total order quantity." },
+  "about.faq1A": { zh: "不同商品 MOQ（最低订购量）不同，请联系我们获取具体起订数量。",
+                   en: "MOQ varies by product. Contact us for the minimum order quantity for specific items." },
   "about.faq2Q": { zh: "500 件以上具体折扣多少？", en: "What exactly is the discount above 500 pcs?" },
   "about.faq2A": { zh: "500-999 件享 9 折（10% off），1000 件以上享 8.5 折（15% off）。更大批量（3000 件以上）可单独议价。",
                    en: "500-999 pcs: 10% off. 1000+ pcs: 15% off. For larger volumes (3,000+ pcs) we negotiate a dedicated price." },
@@ -257,8 +259,8 @@ window.I18N = {
   "terms.tocH":  { zh: "本页内容", en: "On this page" },
 
   "terms.s1H":  { zh: "1. 订单与起订量", en: "1. Orders & Minimum Order Quantity" },
-  "terms.s1P":  { zh: "所有订单最低起订量为 200 件，可混合不同产品编号，单一型号最少 50 件。订单以我方出具并经双方签署的形式发票（PI）为准，PI 中的规格、数量、单价、交期与贸易条款构成正式合同内容。网站展示的价格为参考价，不构成要约；正式价格以书面报价单或 PI 为准。",
-                  en: "The minimum order quantity is 200 pcs, which may combine different item codes with a minimum of 50 pcs per model. Orders are governed by the Proforma Invoice (PI) issued by us and signed by both parties; the specifications, quantity, unit price, lead time and trade terms in the PI constitute the binding contract. Prices shown on this website are indicative only and do not constitute an offer; binding prices are those in a written quotation or PI." },
+  "terms.s1P":  { zh: "不同商品 MOQ（最低订购量）不同，请联系我们获取具体起订数量。订单以我方出具并经双方签署的形式发票（PI）为准，PI 中的规格、数量、单价、交期与贸易条款构成正式合同内容。网站展示的价格为参考价，不构成要约；正式价格以书面报价单或 PI 为准。",
+                  en: "MOQ varies by product. Contact us for the minimum order quantity for specific items. Orders are governed by the Proforma Invoice (PI) issued by us and signed by both parties; the specifications, quantity, unit price, lead time and trade terms in the PI constitute the binding contract. Prices shown on this website are indicative only and do not constitute an offer; binding prices are those in a written quotation or PI." },
   "terms.s2H":  { zh: "2. 价格与折扣", en: "2. Prices & Discounts" },
   "terms.s2P":  { zh: "报价默认以 USD 计价、FOB 宁波 / 上海条款，有效期 15 天。折扣按订单总件数计算：500-999 件享 9 折，1000 件以上享 8.5 折，混批订单同样累计总量计档。价格不含目的国进口关税、增值税、清关费与内陆运输费，除另行约定 DDP 条款。原材料价格或汇率大幅波动时，我方保留在下单前调整报价的权利。",
                   en: "Quotations are in USD on FOB Ningbo / Shanghai terms and valid for 15 days. Discounts are based on total order quantity: 10% off for 500-999 pcs and 15% off for 1,000+ pcs; mixed orders accumulate toward the same tiers. Prices exclude import duties, VAT, customs clearance and inland transport in the destination country unless DDP terms are agreed. We reserve the right to revise quotations before order confirmation in the event of significant raw-material or exchange-rate movements." },
@@ -293,8 +295,8 @@ window.I18N = {
 
   /* ===== 页脚 / Footer ===== */
   "footer.aboutH":   { zh: "关于我们", en: "About" },
-  "footer.aboutP":   { zh: "专业猫爬架生产厂家，工厂直供全球批发买家。起订 200 件，支持混批与 OEM 定制。",
-                       en: "Professional cat tree manufacturer supplying wholesale buyers worldwide. MOQ 200 pcs, mixed orders and OEM welcome." },
+  "footer.aboutP":   { zh: "专业猫爬架生产厂家，工厂直供全球批发买家。不同商品 MOQ 不同，支持 OEM 定制。",
+                       en: "Professional cat tree manufacturer supplying wholesale buyers worldwide. MOQ varies by product; OEM orders are welcome." },
   "footer.linksH":   { zh: "快速导航", en: "Quick Links" },
   "footer.contactH": { zh: "联系我们", en: "Contact" },
   "footer.hoursH":   { zh: "工作时间", en: "Business Hours" },
@@ -304,3 +306,4 @@ window.I18N = {
   "footer.disclaim": { zh: "本站产品图片与规格仅供参考，实际以确认样品为准。",
                        en: "Product images and specifications are for reference; the approved sample prevails." }
 };
+
